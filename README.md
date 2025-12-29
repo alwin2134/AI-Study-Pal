@@ -48,10 +48,9 @@
 
 ## 📂 Submission Contents
 
-1. **`Demo_Script.md`**: A step-by-step script for presenting the project during the viva/demo.
-2. **`Technical_Reference.md`**: A complete dictionary of every file in the codebase.
-3. **`PROJECT_REPORT.md`**: A detailed report on architecture, challenges, and future scope.
-4. **`SETUP_GUIDE.md`**: Instructions to install and run the project from scratch.
+1. **`Technical_Reference.md`**: A complete dictionary of every file in the codebase.
+2. **`PROJECT_REPORT.md`**: A detailed report on architecture, challenges, and future scope.
+3. **`SETUP_GUIDE.md`**: Instructions to install and run the project from scratch.
 
 ---
 
