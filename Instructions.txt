@@ -1,0 +1,13 @@
+Submission Directory Structure:
+
+1. README.md, PROJECT_REPORT.md, SETUP_GUIDE.md
+   - Core project documentation. Start here.
+
+2. Code/ai-study-pal-ui/
+   - The complete source code.
+   - backend/: Python Flask server.
+   - src/: React Frontend code.
+   - public/: Static assets.
+
+Note: 'node_modules' and 'venv' folders have been removed to keep the submission size small. 
+Follow SETUP_GUIDE.md to re-install dependencies.

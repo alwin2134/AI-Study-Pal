@@ -1,0 +1,8 @@
+--- Testing 'AI Only' (General) Mode ---
+Query: Explain the theory of relativity in simple terms.
+
+Γ£à Response Received (Length: 265 chars)
+Answer Snippet: It is a theory which has a very long history of theoretical and theoretical work. The idea is that we have to get to the point where we have to be able to move in the space of a very long time.
+Answer...
+Γ£à Sources: None (Correct for AI Only mode)
+ΓÜá∩╕Å Answer might be hallucinated or completely off.

@@ -1,0 +1,193 @@
+--- Rehydrating RAG Index from Storage ---
+C:\Users\alwin\AppData\Roaming\Python\Python314\site-packages\langchain_core\_api\deprecation.py:26: UserWarning: Core Pydantic V1 functionality isn't compatible with Python 3.14 or greater.
+  from pydantic.v1.fields import FieldInfo as FieldInfoV1
+Warning: TensorFlow not found. DL Summarizer will use mock mode.
+--- RAG Rehydration queued 10 documents for background indexing. Server starting. ---
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [23/Dec/2025 00:16:22] "POST /api/notes HTTP/1.1" 200 -
+127.0.0.1 - - [23/Dec/2025 00:16:24] "POST /api/notes HTTP/1.1" 200 -
+[RAGPipeline] Query: What is mitochondria?, Bucket: Biology
+[RAG] Query: What is mitochondria? | Filter: {'k': 5, 'filter': {'bucket': 'Biology'}}
+[RAG-DEBUG] Active bucket: Biology
+[RAG-DEBUG] Applied filter: {'bucket': 'Biology'}
+[RAG-DEBUG] Retrieved metadata: [{'bucket': 'Biology', 'filename': 'Mito Fact'}]
+[RAG] Doc: Mito Fact | Score: 0.669
+[RAG] Final Context (1 chunks, 8 words): The mitochondrion is the powerhouse of the cell....
+Loading Local LLM: TinyLlama/TinyLlama-1.1B-Chat-v1.0...
+Local LLM Device: cpu
+`torch_dtype` is deprecated! Use `dtype` instead!
+Local LLM Loaded.
+Device set to use cpu
+127.0.0.1 - - [23/Dec/2025 00:17:38] "POST /api/chat HTTP/1.1" 200 -
+[RAGPipeline] Query: What is mitochondria?, Bucket: Physics
+[RAG] Query: What is mitochondria? | Filter: {'k': 5, 'filter': {'bucket': 'Physics'}}
+C:\Users\alwin\OneDrive\Documents\LaunchEd\Capstone\ai-study-pal-ui\backend\ml_utils.py:145: UserWarning: Relevance scores must be between 0 and 1, got [(Document(id='491406e7-0cc6-4dc2-9c1f-c6423a0580c5', metadata={'bucket': 'Physics', 'filename': 'Universe Fact'}, page_content='The universe is approximately 13.8 billion years old.'), np.float32(-0.29302156))]
+  docs_and_scores = self.vectorstore.similarity_search_with_relevance_scores(query_text, **search_kwargs)
+[RAG-DEBUG] Active bucket: Physics
+[RAG-DEBUG] Applied filter: {'bucket': 'Physics'}
+[RAG-DEBUG] Retrieved metadata: [{'bucket': 'Physics', 'filename': 'Universe Fact'}]
+[RAG] Doc: Universe Fact | Score: -0.293
+[RAG] No docs met threshold -> NOT_IN_NOTES
+127.0.0.1 - - [23/Dec/2025 00:17:40] "POST /api/chat HTTP/1.1" 200 -
+[RAGPipeline] Query: What is mitochondria?, Bucket: All Buckets
+[RAG] Query: What is mitochondria? | Filter: {'k': 5, 'filter': {'bucket': 'All Buckets'}}
+[RAG-DEBUG] Active bucket: All Buckets
+[RAG-DEBUG] Applied filter: {'bucket': 'All Buckets'}
+[RAG-DEBUG] Retrieved metadata: []
+[RAG] No docs met threshold -> NOT_IN_NOTES
+127.0.0.1 - - [23/Dec/2025 00:17:42] "POST /api/chat HTTP/1.1" 200 -
+[RAGPipeline] Query: what is mitochondria , Bucket: All Notes
+[RAG] Query: what is mitochondria  | Filter: {'k': 5}
+C:\Users\alwin\OneDrive\Documents\LaunchEd\Capstone\ai-study-pal-ui\backend\ml_utils.py:145: UserWarning: Relevance scores must be between 0 and 1, got [(Document(id='2428fa36-1695-408d-b54b-3243018dbc3e', metadata={'bucket': 'Biology Fix', 'filename': 'Mito Fact'}, page_content='The mitochondrion is the powerhouse of the cell.'), np.float32(0.6102196)), (Document(id='9a6c3f7a-d4cf-4159-ba41-5a57784d1034', metadata={'bucket': 'Biology', 'filename': 'Mito Fact'}, page_content='The mitochondrion is the powerhouse of the cell.'), np.float32(0.6102196)), (Document(id='ad8e1801-faf2-4012-9cd9-b980bc8178c4', metadata={'bucket': 'Biology Fix', 'filename': 'Cell Powerhouse'}, page_content="The mitochondrion is known as the powerhouse of the cell. It generates most of the chemical energy needed to power the cell's biochemical reactions."), np.float32(0.5365255)), (Document(id='d17018eb-709d-48b1-ac63-ab8f822e4674', metadata={'bucket': 'Biology Fix', 'filename': 'Universe Fact'}, page_content='The universe is approximately 13.8 billion years old.'), np.float32(-0.32504213)), (Document(id='491406e7-0cc6-4dc2-9c1f-c6423a0580c5', metadata={'bucket': 'Physics', 'filename': 'Universe Fact'}, page_content='The universe is approximately 13.8 billion years old.'), np.float32(-0.32504213))]
+  docs_and_scores = self.vectorstore.similarity_search_with_relevance_scores(query_text, **search_kwargs)
+[RAG-DEBUG] Active bucket: All Notes
+[RAG-DEBUG] Applied filter: None
+[RAG-DEBUG] Retrieved metadata: [{'bucket': 'Biology Fix', 'filename': 'Mito Fact'}, {'bucket': 'Biology', 'filename': 'Mito Fact'}, {'bucket': 'Biology Fix', 'filename': 'Cell Powerhouse'}, {'bucket': 'Biology Fix', 'filename': 'Universe Fact'}, {'bucket': 'Physics', 'filename': 'Universe Fact'}]
+[RAG] Doc: Mito Fact | Score: 0.610
+[RAG] Doc: Mito Fact | Score: 0.610
+[RAG] Doc: Cell Powerhouse | Score: 0.537
+[RAG] Doc: Universe Fact | Score: -0.325
+[RAG] Doc: Universe Fact | Score: -0.325
+[RAG] No docs met threshold -> NOT_IN_NOTES
+127.0.0.1 - - [23/Dec/2025 00:20:44] "POST /api/chat HTTP/1.1" 200 -
+[RAGPipeline] Query: what is mitochondria , Bucket: Biology Audit
+[RAG] Query: what is mitochondria  | Filter: {'k': 5, 'filter': {'bucket': 'Biology Audit'}}
+[RAG-DEBUG] Active bucket: Biology Audit
+[RAG-DEBUG] Applied filter: {'bucket': 'Biology Audit'}
+[RAG-DEBUG] Retrieved metadata: []
+[RAG] No docs met threshold -> NOT_IN_NOTES
+127.0.0.1 - - [23/Dec/2025 00:21:16] "POST /api/chat HTTP/1.1" 200 -
+[RAGPipeline] Query: what is mitochondria , Bucket: Biology
+[RAG] Query: what is mitochondria  | Filter: {'k': 5, 'filter': {'bucket': 'Biology'}}
+[RAG-DEBUG] Active bucket: Biology
+[RAG-DEBUG] Applied filter: {'bucket': 'Biology'}
+[RAG-DEBUG] Retrieved metadata: [{'bucket': 'Biology', 'filename': 'Mito Fact'}]
+[RAG] Doc: Mito Fact | Score: 0.610
+[RAG] No docs met threshold -> NOT_IN_NOTES
+127.0.0.1 - - [23/Dec/2025 00:21:21] "POST /api/chat HTTP/1.1" 200 -
+[RAGPipeline] Query: what is mitochondria , Bucket: Biology Fix
+[RAG] Query: what is mitochondria  | Filter: {'k': 5, 'filter': {'bucket': 'Biology Fix'}}
+C:\Users\alwin\OneDrive\Documents\LaunchEd\Capstone\ai-study-pal-ui\backend\ml_utils.py:145: UserWarning: Relevance scores must be between 0 and 1, got [(Document(id='2428fa36-1695-408d-b54b-3243018dbc3e', metadata={'bucket': 'Biology Fix', 'filename': 'Mito Fact'}, page_content='The mitochondrion is the powerhouse of the cell.'), np.float32(0.6102196)), (Document(id='ad8e1801-faf2-4012-9cd9-b980bc8178c4', metadata={'bucket': 'Biology Fix', 'filename': 'Cell Powerhouse'}, page_content="The mitochondrion is known as the powerhouse of the cell. It generates most of the chemical energy needed to power the cell's biochemical reactions."), np.float32(0.5365255)), (Document(id='d17018eb-709d-48b1-ac63-ab8f822e4674', metadata={'bucket': 'Biology Fix', 'filename': 'Universe Fact'}, page_content='The universe is approximately 13.8 billion years old.'), np.float32(-0.32504213))]
+  docs_and_scores = self.vectorstore.similarity_search_with_relevance_scores(query_text, **search_kwargs)
+[RAG-DEBUG] Active bucket: Biology Fix
+[RAG-DEBUG] Applied filter: {'bucket': 'Biology Fix'}
+[RAG-DEBUG] Retrieved metadata: [{'bucket': 'Biology Fix', 'filename': 'Mito Fact'}, {'bucket': 'Biology Fix', 'filename': 'Cell Powerhouse'}, {'bucket': 'Biology Fix', 'filename': 'Universe Fact'}]
+[RAG] Doc: Mito Fact | Score: 0.610
+[RAG] Doc: Cell Powerhouse | Score: 0.537
+[RAG] Doc: Universe Fact | Score: -0.325
+[RAG] No docs met threshold -> NOT_IN_NOTES
+127.0.0.1 - - [23/Dec/2025 00:21:25] "POST /api/chat HTTP/1.1" 200 -
+[RAGPipeline] Query: what is mitochondria , Bucket: Biology Audit
+[RAG] Query: what is mitochondria  | Filter: {'k': 5, 'filter': {'bucket': 'Biology Audit'}}
+[RAG-DEBUG] Active bucket: Biology Audit
+[RAG-DEBUG] Applied filter: {'bucket': 'Biology Audit'}
+[RAG-DEBUG] Retrieved metadata: []
+[RAG] No docs met threshold -> NOT_IN_NOTES
+127.0.0.1 - - [23/Dec/2025 00:21:30] "POST /api/chat HTTP/1.1" 200 -
+127.0.0.1 - - [23/Dec/2025 00:21:36] "GET /api/files HTTP/1.1" 200 -
+127.0.0.1 - - [23/Dec/2025 00:21:36] "GET /api/files HTTP/1.1" 200 -
+[RAGPipeline] Query: What is mitochondria?, Bucket: All Notes
+[RAG] Query: What is mitochondria? | Filter: {'k': 5}
+C:\Users\alwin\OneDrive\Documents\LaunchEd\Capstone\ai-study-pal-ui\backend\ml_utils.py:145: UserWarning: Relevance scores must be between 0 and 1, got [(Document(id='2428fa36-1695-408d-b54b-3243018dbc3e', metadata={'bucket': 'Biology Fix', 'filename': 'Mito Fact'}, page_content='The mitochondrion is the powerhouse of the cell.'), np.float32(0.6691314)), (Document(id='9a6c3f7a-d4cf-4159-ba41-5a57784d1034', metadata={'bucket': 'Biology', 'filename': 'Mito Fact'}, page_content='The mitochondrion is the powerhouse of the cell.'), np.float32(0.6691314)), (Document(id='ad8e1801-faf2-4012-9cd9-b980bc8178c4', metadata={'bucket': 'Biology Fix', 'filename': 'Cell Powerhouse'}, page_content="The mitochondrion is known as the powerhouse of the cell. It generates most of the chemical energy needed to power the cell's biochemical reactions."), np.float32(0.5745425)), (Document(id='d17018eb-709d-48b1-ac63-ab8f822e4674', metadata={'bucket': 'Biology Fix', 'filename': 'Universe Fact'}, page_content='The universe is approximately 13.8 billion years old.'), np.float32(-0.29302156)), (Document(id='491406e7-0cc6-4dc2-9c1f-c6423a0580c5', metadata={'bucket': 'Physics', 'filename': 'Universe Fact'}, page_content='The universe is approximately 13.8 billion years old.'), np.float32(-0.29302156))]
+  docs_and_scores = self.vectorstore.similarity_search_with_relevance_scores(query_text, **search_kwargs)
+[RAG-DEBUG] Active bucket: All Notes
+[RAG-DEBUG] Applied filter: None
+[RAG-DEBUG] Retrieved metadata: [{'bucket': 'Biology Fix', 'filename': 'Mito Fact'}, {'bucket': 'Biology', 'filename': 'Mito Fact'}, {'bucket': 'Biology Fix', 'filename': 'Cell Powerhouse'}, {'bucket': 'Biology Fix', 'filename': 'Universe Fact'}, {'bucket': 'Physics', 'filename': 'Universe Fact'}]
+[RAG] Doc: Mito Fact | Score: 0.669
+[RAG] Doc: Mito Fact | Score: 0.669
+[RAG] Doc: Cell Powerhouse | Score: 0.575
+[RAG] Doc: Universe Fact | Score: -0.293
+[RAG] Doc: Universe Fact | Score: -0.293
+[RAG] Final Context (2 chunks, 16 words): The mitochondrion is the powerhouse of the cell.
+
+The mitochondrion is the powerhouse of the cell....
+127.0.0.1 - - [23/Dec/2025 00:22:47] "POST /api/chat HTTP/1.1" 200 -
+127.0.0.1 - - [23/Dec/2025 00:25:37] "POST /api/notes HTTP/1.1" 200 -
+[RAGPipeline] Query: What is mitochondria?, Bucket: All Notes
+[RAG] Query: What is mitochondria? | Filter: {'k': 5}
+C:\Users\alwin\OneDrive\Documents\LaunchEd\Capstone\ai-study-pal-ui\backend\ml_utils.py:145: UserWarning: Relevance scores must be between 0 and 1, got [(Document(id='2428fa36-1695-408d-b54b-3243018dbc3e', metadata={'bucket': 'Biology Fix', 'filename': 'Mito Fact'}, page_content='The mitochondrion is the powerhouse of the cell.'), np.float32(0.6691314)), (Document(id='9a6c3f7a-d4cf-4159-ba41-5a57784d1034', metadata={'bucket': 'Biology', 'filename': 'Mito Fact'}, page_content='The mitochondrion is the powerhouse of the cell.'), np.float32(0.6691314)), (Document(id='ad8e1801-faf2-4012-9cd9-b980bc8178c4', metadata={'bucket': 'Biology Fix', 'filename': 'Cell Powerhouse'}, page_content="The mitochondrion is known as the powerhouse of the cell. It generates most of the chemical energy needed to power the cell's biochemical reactions."), np.float32(0.5745425)), (Document(id='d04f3c3d-c705-4f75-a948-3284d7d61bbb', metadata={'bucket': 'Physics', 'filename': 'The Universe'}, page_content='The universe is 13.8 billion years old.'), np.float32(-0.28222477)), (Document(id='d17018eb-709d-48b1-ac63-ab8f822e4674', metadata={'bucket': 'Biology Fix', 'filename': 'Universe Fact'}, page_content='The universe is approximately 13.8 billion years old.'), np.float32(-0.29302156))]
+  docs_and_scores = self.vectorstore.similarity_search_with_relevance_scores(query_text, **search_kwargs)
+[RAG-DEBUG] Active bucket: All Notes
+[RAG-DEBUG] Applied filter: None
+[RAG-DEBUG] Retrieved metadata: [{'bucket': 'Biology Fix', 'filename': 'Mito Fact'}, {'bucket': 'Biology', 'filename': 'Mito Fact'}, {'bucket': 'Biology Fix', 'filename': 'Cell Powerhouse'}, {'bucket': 'Physics', 'filename': 'The Universe'}, {'bucket': 'Biology Fix', 'filename': 'Universe Fact'}]
+[RAG] Doc: Mito Fact | Score: 0.669
+[RAG] Doc: Mito Fact | Score: 0.669
+[RAG] Doc: Cell Powerhouse | Score: 0.575
+[RAG] Doc: The Universe | Score: -0.282
+[RAG] Doc: Universe Fact | Score: -0.293
+[RAG] Final Context (2 chunks, 16 words): The mitochondrion is the powerhouse of the cell.
+
+The mitochondrion is the powerhouse of the cell....
+127.0.0.1 - - [23/Dec/2025 00:28:40] "POST /api/chat HTTP/1.1" 200 -
+[RAGPipeline] Query: What is mitochondria?, Bucket: All Notes
+[RAG] Query: What is mitochondria? | Filter: {'k': 5}
+[RAG-DEBUG] Active bucket: All Notes
+[RAG-DEBUG] Applied filter: None
+[RAG-DEBUG] Retrieved metadata: [{'bucket': 'Biology Fix', 'filename': 'Mito Fact'}, {'bucket': 'Biology', 'filename': 'Mito Fact'}, {'bucket': 'Biology Fix', 'filename': 'Cell Powerhouse'}, {'bucket': 'Physics', 'filename': 'The Universe'}, {'bucket': 'Biology Fix', 'filename': 'Universe Fact'}]
+[RAG] Doc: Mito Fact | Score: 0.669
+[RAG] Doc: Mito Fact | Score: 0.669
+[RAG] Doc: Cell Powerhouse | Score: 0.575
+[RAG] Doc: The Universe | Score: -0.282
+[RAG] Doc: Universe Fact | Score: -0.293
+[RAG] Final Context (2 chunks, 16 words): The mitochondrion is the powerhouse of the cell.
+
+The mitochondrion is the powerhouse of the cell....
+127.0.0.1 - - [23/Dec/2025 00:32:35] "POST /api/chat HTTP/1.1" 200 -
+[AIPipeline] Query: Who are you?
+127.0.0.1 - - [23/Dec/2025 00:35:21] "POST /api/chat HTTP/1.1" 200 -
+[RAGPipeline] Query: how old is the universe ?, Bucket: Physics
+[RAG] Query: how old is the universe ? | Filter: {'k': 5, 'filter': {'bucket': 'Physics'}}
+[RAG-DEBUG] Active bucket: Physics
+[RAG-DEBUG] Applied filter: {'bucket': 'Physics'}
+[RAG-DEBUG] Retrieved metadata: [{'bucket': 'Physics', 'filename': 'Universe Fact'}, {'bucket': 'Physics', 'filename': 'The Universe'}]
+[RAG] Doc: Universe Fact | Score: 0.737
+[RAG] Doc: The Universe | Score: 0.680
+[RAG] Final Context (2 chunks, 15 words): The universe is approximately 13.8 billion years old.
+
+The universe is 13.8 billion years old....
+127.0.0.1 - - [23/Dec/2025 00:41:03] "POST /api/chat HTTP/1.1" 200 -
+[RAGPipeline] Query: what is the project ?, Bucket: Physics
+[RAG] Query: what is the project ? | Filter: {'k': 5, 'filter': {'bucket': 'Physics'}}
+C:\Users\alwin\OneDrive\Documents\LaunchEd\Capstone\ai-study-pal-ui\backend\ml_utils.py:145: UserWarning: Relevance scores must be between 0 and 1, got [(Document(id='d04f3c3d-c705-4f75-a948-3284d7d61bbb', metadata={'bucket': 'Physics', 'filename': 'The Universe'}, page_content='The universe is 13.8 billion years old.'), np.float32(-0.34668374)), (Document(id='491406e7-0cc6-4dc2-9c1f-c6423a0580c5', metadata={'bucket': 'Physics', 'filename': 'Universe Fact'}, page_content='The universe is approximately 13.8 billion years old.'), np.float32(-0.36319244))]
+  docs_and_scores = self.vectorstore.similarity_search_with_relevance_scores(query_text, **search_kwargs)
+[RAG-DEBUG] Active bucket: Physics
+[RAG-DEBUG] Applied filter: {'bucket': 'Physics'}
+[RAG-DEBUG] Retrieved metadata: [{'bucket': 'Physics', 'filename': 'The Universe'}, {'bucket': 'Physics', 'filename': 'Universe Fact'}]
+[RAG] Doc: The Universe | Score: -0.347
+[RAG] Doc: Universe Fact | Score: -0.363
+[RAG] No docs met threshold -> NOT_IN_NOTES
+127.0.0.1 - - [23/Dec/2025 00:41:31] "POST /api/chat HTTP/1.1" 200 -
+[RAGPipeline] Query: what is the project ?!, Bucket: All Notes
+[RAG] Query: what is the project ?! | Filter: {'k': 5}
+[RAG-DEBUG] Active bucket: All Notes
+[RAG-DEBUG] Applied filter: None
+[RAG-DEBUG] Retrieved metadata: [{'bucket': 'Biology Fix', 'filename': 'Cell Powerhouse'}, {'bucket': 'Biology Fix', 'filename': 'Mito Fact'}, {'bucket': 'Biology', 'filename': 'Mito Fact'}, {'bucket': 'Physics', 'filename': 'The Universe'}, {'bucket': 'Biology Fix', 'filename': 'Universe Fact'}]
+[RAG] Doc: Cell Powerhouse | Score: -0.228
+[RAG] Doc: Mito Fact | Score: -0.253
+[RAG] Doc: Mito Fact | Score: -0.253
+[RAG] Doc: The Universe | Score: -0.328
+[RAG] Doc: Universe Fact | Score: -0.345
+C:\Users\alwin\OneDrive\Documents\LaunchEd\Capstone\ai-study-pal-ui\backend\ml_utils.py:145: UserWarning: Relevance scores must be between 0 and 1, got [(Document(id='ad8e1801-faf2-4012-9cd9-b980bc8178c4', metadata={'bucket': 'Biology Fix', 'filename': 'Cell Powerhouse'}, page_content="The mitochondrion is known as the powerhouse of the cell. It generates most of the chemical energy needed to power the cell's biochemical reactions."), np.float32(-0.22799861)), (Document(id='2428fa36-1695-408d-b54b-3243018dbc3e', metadata={'bucket': 'Biology Fix', 'filename': 'Mito Fact'}, page_content='The mitochondrion is the powerhouse of the cell.'), np.float32(-0.2529546)), (Document(id='9a6c3f7a-d4cf-4159-ba41-5a57784d1034', metadata={'bucket': 'Biology', 'filename': 'Mito Fact'}, page_content='The mitochondrion is the powerhouse of the cell.'), np.float32(-0.2529546)), (Document(id='d04f3c3d-c705-4f75-a948-3284d7d61bbb', metadata={'bucket': 'Physics', 'filename': 'The Universe'}, page_content='The universe is 13.8 billion years old.'), np.float32(-0.32789505)), (Document(id='d17018eb-709d-48b1-ac63-ab8f822e4674', metadata={'bucket': 'Biology Fix', 'filename': 'Universe Fact'}, page_content='The universe is approximately 13.8 billion years old.'), np.float32(-0.3451711))]
+  docs_and_scores = self.vectorstore.similarity_search_with_relevance_scores(query_text, **search_kwargs)
+[RAG] No docs met threshold -> NOT_IN_NOTES
+127.0.0.1 - - [23/Dec/2025 00:41:44] "POST /api/chat HTTP/1.1" 200 -
+[RAGPipeline] Query: how old is the universe , Bucket: All Notes
+[RAG] Query: how old is the universe  | Filter: {'k': 5}
+[RAG-DEBUG] Active bucket: All Notes
+[RAG-DEBUG] Applied filter: None
+C:\Users\alwin\OneDrive\Documents\LaunchEd\Capstone\ai-study-pal-ui\backend\ml_utils.py:145: UserWarning: Relevance scores must be between 0 and 1, got [(Document(id='d17018eb-709d-48b1-ac63-ab8f822e4674', metadata={'bucket': 'Biology Fix', 'filename': 'Universe Fact'}, page_content='The universe is approximately 13.8 billion years old.'), np.float32(0.75647235)), (Document(id='491406e7-0cc6-4dc2-9c1f-c6423a0580c5', metadata={'bucket': 'Physics', 'filename': 'Universe Fact'}, page_content='The universe is approximately 13.8 billion years old.'), np.float32(0.75647235)), (Document(id='d04f3c3d-c705-4f75-a948-3284d7d61bbb', metadata={'bucket': 'Physics', 'filename': 'The Universe'}, page_content='The universe is 13.8 billion years old.'), np.float32(0.6958077)), (Document(id='2428fa36-1695-408d-b54b-3243018dbc3e', metadata={'bucket': 'Biology Fix', 'filename': 'Mito Fact'}, page_content='The mitochondrion is the powerhouse of the cell.'), np.float32(-0.2549299)), (Document(id='9a6c3f7a-d4cf-4159-ba41-5a57784d1034', metadata={'bucket': 'Biology', 'filename': 'Mito Fact'}, page_content='The mitochondrion is the powerhouse of the cell.'), np.float32(-0.2549299))]
+[RAG-DEBUG] Retrieved metadata: [{'bucket': 'Biology Fix', 'filename': 'Universe Fact'}, {'bucket': 'Physics', 'filename': 'Universe Fact'}, {'bucket': 'Physics', 'filename': 'The Universe'}, {'bucket': 'Biology Fix', 'filename': 'Mito Fact'}, {'bucket': 'Biology', 'filename': 'Mito Fact'}]
+  docs_and_scores = self.vectorstore.similarity_search_with_relevance_scores(query_text, **search_kwargs)
+[RAG] Doc: Universe Fact | Score: 0.756
+[RAG] Doc: Universe Fact | Score: 0.756
+[RAG] Doc: The Universe | Score: 0.696
+[RAG] Doc: Mito Fact | Score: -0.255
+[RAG] Doc: Mito Fact | Score: -0.255
+[RAG] Final Context (2 chunks, 16 words): The universe is approximately 13.8 billion years old.
+
+The universe is approximately 13.8 billion years old....
+127.0.0.1 - - [23/Dec/2025 00:42:09] "POST /api/chat HTTP/1.1" 200 -

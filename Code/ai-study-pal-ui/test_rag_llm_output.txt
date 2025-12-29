@@ -1,0 +1,8 @@
+--- Testing Contextual RAG (Local LLM + Notes) ---
+Uploading test_data_rag.txt...
+Γ£à Upload successful
+Querying: What is the code name of the secret project?
+
+Response: I couldn't find any information in the 'User Upload' bucket about that. Try switching buckets or asking something covered in your notes.
+Γ¥î RAG failed (Info missing)
+Γ£à LLM Synthesis successful (Custom answer generated)

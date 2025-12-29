@@ -1,0 +1,7 @@
+--- Testing 'AI Only' (General) Mode ---
+Query: Explain the theory of relativity in simple terms.
+
+Γ£à Response Received (Length: 0 chars)
+Answer Snippet: ...
+Γ£à Sources: None (Correct for AI Only mode)
+ΓÜá∩╕Å Answer might be hallucinated or completely off.

@@ -1,0 +1,28 @@
+    try:
+        print("--- Rehydrating RAG Index from Storage ---")
+        meta = metadata_manager.load_metadata()
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        upload_dir = os.path.join(BASE_DIR, 'data', 'uploads')
+        
+        from ml_utils import rag_system
+        # Schedule rehydration to run in background so server starts quickly
+        queued = 0
+        for fname, info in meta.items():
+            fpath = os.path.join(upload_dir, fname)
+            if os.path.exists(fpath):
+                try:
+                    content = file_processor.extract_text_from_file(fpath)
+                    if content:
+                        # Direct add for now to ensure availability? Or background? 
+                        # Background is safer for startup time.
+                        background.submit_task(rag_system.add_document, content, info.get('bucket_name', 'Uncategorized'), info.get('original_name', fname))
+                        queued += 1
+                except Exception as e:
+                    print(f"Failed to queue re-index for {fname}: {e}")
+            else:
+                 # Try Supabase download fallback if needed (omitted for speed/stability unless requested)
+                 pass
+                 
+        print(f"--- RAG Rehydration queued {queued} documents for background indexing. Server starting. ---")
+    except Exception as e:
+        print(f"RAG Rehydration failed: {e}")

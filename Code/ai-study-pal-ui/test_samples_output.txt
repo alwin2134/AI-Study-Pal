@@ -1,0 +1,7 @@
+--- Testing 'AI Only' (General) Mode ---
+Query: Explain the theory of relativity in simple terms.
+
+Γ£à Response Received (Length: 48 chars)
+Answer Snippet: Okay, so I think gravity is a fundamental force....
+Γ£à Sources: None (Correct for AI Only mode)
+Γ£à Context: Answer contains relevant general knowledge.
